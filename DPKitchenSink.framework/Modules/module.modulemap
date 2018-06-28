@@ -1,0 +1,11 @@
+framework module DPKitchenSink {
+  umbrella header "DPKitchenSink.h"
+
+  export *
+  module * { export * }
+}
+
+module DPKitchenSink.Swift {
+    header "DPKitchenSink-Swift.h"
+    requires objc
+}
