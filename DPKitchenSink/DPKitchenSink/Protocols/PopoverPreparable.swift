@@ -28,13 +28,7 @@ protocol PopoverPreparable {}
 
 extension PopoverPreparable {
     
-    func preparePopover(_ popoverVC: UIViewController, sourceView: UIView?, sourceRect: CGRect?, barButton: UIBarButtonItem? = nil, navControllerPopoverDelegate: UIPopoverPresentationControllerDelegate) -> UINavigationController? {
-        
-        guard let sourceRect = sourceRect, let sourceView = sourceView else {
-            
-            log("Failed to get next field or source view.")
-            return nil
-        }
+    func preparePopover(_ popoverVC: UIViewController, sourceView: UIView, sourceRect: CGRect, barButton: UIBarButtonItem? = nil, navControllerPopoverDelegate: UIPopoverPresentationControllerDelegate) -> UINavigationController {
         
         let navController = UINavigationController(rootViewController: popoverVC)
         navController.isNavigationBarHidden = true
@@ -52,15 +46,9 @@ extension PopoverPreparable {
 
 extension PopoverPreparable where Self : UIViewController {
     
-    func presentPopover(with vc: UIViewController, sourceView: UIView?) {
+    func presentPopover(with vc: UIViewController, sourceView: UIView) {
         
-        guard let sourceView = sourceView,
-            let popoverNavController = preparePopover(vc, sourceView: sourceView, sourceRect: sourceView.bounds, navControllerPopoverDelegate: self) else {
-            
-            showAlert(withTitle: "Popover Error", message: "Can't show popover due to sourceView being nil")
-            return
-        }
-        
+        let popoverNavController = preparePopover(vc, sourceView: sourceView, sourceRect: sourceView.bounds, navControllerPopoverDelegate: self)
         present(popoverNavController, animated: true, completion: nil)
     }
 }

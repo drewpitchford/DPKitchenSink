@@ -13,6 +13,7 @@ target 'DPKitchenSink' do
   target 'DPKitchenSinkTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'MetovaTestKit'
   end
   
 end

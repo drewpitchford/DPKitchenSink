@@ -11,7 +11,7 @@ import XCTest
 class StringExtensionsTests: XCTestCase {
     
     func testDisplayString() {
-        
+         
         let str = "Hello"
         XCTAssertEqual(str.displayText, "Hello")
     }

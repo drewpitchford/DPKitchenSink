@@ -34,6 +34,9 @@
 		358911CE20E5255700E9678F /* UIViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358911CD20E5255700E9678F /* UIViewExtensionsTests.swift */; };
 		358911D220E5264800E9678F /* PopoverViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358911D020E5263900E9678F /* PopoverViewControllerTests.swift */; };
 		358911F120E5318400E9678F /* UIViewControllerExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358911F020E5318400E9678F /* UIViewControllerExtensionsTests.swift */; };
+		35F36D6220E56E5900147A15 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F36D6120E56E5900147A15 /* LoggerTests.swift */; };
+		35F36D6520E56F1900147A15 /* PopoverPreparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F36D6420E56F1900147A15 /* PopoverPreparableTests.swift */; };
+		35F36D6820E571D400147A15 /* TapticFeedbackableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F36D6620E5719300147A15 /* TapticFeedbackableTests.swift */; };
 		B62AD178D525A0815ED144C4 /* Pods_DPKitchenSink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D095686291703F91430ECAC /* Pods_DPKitchenSink.framework */; };
 		E5DC72EF17150512EFE87BCD /* Pods_DPKitchenSinkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D517F910E1A50A12A0271B2A /* Pods_DPKitchenSinkTests.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +84,10 @@
 		358911CD20E5255700E9678F /* UIViewExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensionsTests.swift; sourceTree = "<group>"; };
 		358911D020E5263900E9678F /* PopoverViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewControllerTests.swift; sourceTree = "<group>"; };
 		358911F020E5318400E9678F /* UIViewControllerExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensionsTests.swift; sourceTree = "<group>"; };
+		35F36D6120E56E5900147A15 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
+		35F36D6420E56F1900147A15 /* PopoverPreparableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverPreparableTests.swift; sourceTree = "<group>"; };
+		35F36D6620E5719300147A15 /* TapticFeedbackableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapticFeedbackableTests.swift; sourceTree = "<group>"; };
+		35F36D6920E5741D00147A15 /* DPKitchenSinkTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DPKitchenSinkTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		38AE3F1165E39A6BAFCF1EA5 /* Pods-DPKitchenSinkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPKitchenSinkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DPKitchenSinkTests/Pods-DPKitchenSinkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		603A7E7AE75D0E84656E6965 /* Pods-DPKitchenSink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPKitchenSink.release.xcconfig"; path = "Pods/Target Support Files/Pods-DPKitchenSink/Pods-DPKitchenSink.release.xcconfig"; sourceTree = "<group>"; };
 		785BA2F96B6F15FA57FAB30F /* Pods-DPKitchenSink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPKitchenSink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DPKitchenSink/Pods-DPKitchenSink.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,8 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				3589119720E442CE00E9678F /* Popover.storyboard */,
-				3589119C20E442CE00E9678F /* PopoverDisplayable.swift */,
-				3589119B20E442CE00E9678F /* PopoverPreparable.swift */,
 				3589119820E442CE00E9678F /* PopoverTableViewCell.swift */,
 				3589119920E442CE00E9678F /* PopoverViewController.swift */,
 				3589119A20E442CE00E9678F /* PopoverWidth.swift */,
@@ -204,6 +209,8 @@
 		3589118620E4427500E9678F /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				3589119C20E442CE00E9678F /* PopoverDisplayable.swift */,
+				3589119B20E442CE00E9678F /* PopoverPreparable.swift */,
 				358911A320E442DF00E9678F /* TapticFeedbackable.swift */,
 			);
 			path = Protocols;
@@ -212,8 +219,11 @@
 		358911B420E519F400E9678F /* DPKitchenSinkTests */ = {
 			isa = PBXGroup;
 			children = (
+				35F36D6920E5741D00147A15 /* DPKitchenSinkTests-Bridging-Header.h */,
 				358911B720E519F400E9678F /* Info.plist */,
 				358911C020E51A1300E9678F /* Extensions */,
+				35F36D6020E56E4700147A15 /* Logger */,
+				35F36D6320E56F0800147A15 /* Protocols */,
 				358911CF20E5260A00E9678F /* ViewControllers */,
 			);
 			path = DPKitchenSinkTests;
@@ -240,6 +250,23 @@
 				358911D020E5263900E9678F /* PopoverViewControllerTests.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		35F36D6020E56E4700147A15 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				35F36D6120E56E5900147A15 /* LoggerTests.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		35F36D6320E56F0800147A15 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				35F36D6420E56F1900147A15 /* PopoverPreparableTests.swift */,
+				35F36D6620E5719300147A15 /* TapticFeedbackableTests.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		D3F6CEA038F12F2A1796A255 /* Frameworks */ = {
@@ -320,6 +347,7 @@
 					};
 					358911B220E519F400E9678F = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -386,6 +414,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DPKitchenSinkTests/Pods-DPKitchenSinkTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MetovaTestKit/MetovaTestKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
@@ -393,6 +422,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MetovaTestKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
@@ -455,10 +485,13 @@
 				358911CE20E5255700E9678F /* UIViewExtensionsTests.swift in Sources */,
 				358911CA20E51FF900E9678F /* UIColorExtensionsTests.swift in Sources */,
 				358911C420E51C0C00E9678F /* DoubleExtensionsTests.swift in Sources */,
+				35F36D6820E571D400147A15 /* TapticFeedbackableTests.swift in Sources */,
+				35F36D6220E56E5900147A15 /* LoggerTests.swift in Sources */,
 				358911F120E5318400E9678F /* UIViewControllerExtensionsTests.swift in Sources */,
 				358911C820E51CDC00E9678F /* UIApplicationExtensionsTests.swift in Sources */,
 				358911CC20E5242300E9678F /* UITextFieldExtensionsTests.swift in Sources */,
 				358911BF20E51A0D00E9678F /* IntExtensionsTests.swift in Sources */,
+				35F36D6520E56F1900147A15 /* PopoverPreparableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +687,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38AE3F1165E39A6BAFCF1EA5 /* Pods-DPKitchenSinkTests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8C9TW468J9;
 				INFOPLIST_FILE = DPKitchenSinkTests/Info.plist;
@@ -664,6 +698,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pitchford.drew.DPKitchenSinkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DPKitchenSinkTests/DPKitchenSinkTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -673,6 +709,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C070773D29234CA60CF709B /* Pods-DPKitchenSinkTests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8C9TW468J9;
 				INFOPLIST_FILE = DPKitchenSinkTests/Info.plist;
@@ -683,6 +720,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pitchford.drew.DPKitchenSinkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DPKitchenSinkTests/DPKitchenSinkTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
