@@ -24,7 +24,7 @@
 import Foundation
 import UIKit
 
-protocol PopoverPreparable {}
+public protocol PopoverPreparable {}
 
 extension PopoverPreparable {
     

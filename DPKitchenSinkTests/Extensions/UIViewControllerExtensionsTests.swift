@@ -80,7 +80,7 @@ class UIViewControllerExtensionsTests: XCTestCase {
         vc.dismiss(animated: true, completion: nil)
         
         let myAction = UIAlertAction(title: "Title", style: .default, handler: nil)
-        vc.showAlert(for: error, with: [myAction])
+        vc.showAlert(for: error, actions: [myAction])
         MTKAssertAlertIsPresented(by: vc, style: .alert, title: "Web Error", message: "A localized description", actions: [ExpectedAlertAction(title: "Ok", style: .default)])
     }
 }

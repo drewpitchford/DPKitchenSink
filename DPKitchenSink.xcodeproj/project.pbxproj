@@ -52,6 +52,8 @@
 		35F36D6220E56E5900147A15 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F36D6120E56E5900147A15 /* LoggerTests.swift */; };
 		35F36D6520E56F1900147A15 /* PopoverPreparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F36D6420E56F1900147A15 /* PopoverPreparableTests.swift */; };
 		35F36D6820E571D400147A15 /* TapticFeedbackableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F36D6620E5719300147A15 /* TapticFeedbackableTests.swift */; };
+		35F36DB720E6D09A00147A15 /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F36DB620E6D09A00147A15 /* UIStoryboard+Extensions.swift */; };
+		35F36DBB20E6D37D00147A15 /* UIStoryboardExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F36DBA20E6D37D00147A15 /* UIStoryboardExtensionsTests.swift */; };
 		B62AD178D525A0815ED144C4 /* Pods_DPKitchenSink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D095686291703F91430ECAC /* Pods_DPKitchenSink.framework */; };
 		E5DC72EF17150512EFE87BCD /* Pods_DPKitchenSinkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D517F910E1A50A12A0271B2A /* Pods_DPKitchenSinkTests.framework */; };
 /* End PBXBuildFile section */
@@ -110,6 +112,8 @@
 		35F36D6420E56F1900147A15 /* PopoverPreparableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverPreparableTests.swift; sourceTree = "<group>"; };
 		35F36D6620E5719300147A15 /* TapticFeedbackableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapticFeedbackableTests.swift; sourceTree = "<group>"; };
 		35F36D6920E5741D00147A15 /* DPKitchenSinkTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DPKitchenSinkTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		35F36DB620E6D09A00147A15 /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
+		35F36DBA20E6D37D00147A15 /* UIStoryboardExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensionsTests.swift; sourceTree = "<group>"; };
 		38AE3F1165E39A6BAFCF1EA5 /* Pods-DPKitchenSinkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPKitchenSinkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DPKitchenSinkTests/Pods-DPKitchenSinkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		603A7E7AE75D0E84656E6965 /* Pods-DPKitchenSink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPKitchenSink.release.xcconfig"; path = "Pods/Target Support Files/Pods-DPKitchenSink/Pods-DPKitchenSink.release.xcconfig"; sourceTree = "<group>"; };
 		785BA2F96B6F15FA57FAB30F /* Pods-DPKitchenSink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPKitchenSink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DPKitchenSink/Pods-DPKitchenSink.debug.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 				3589118B20E442A700E9678F /* String+Extensions.swift */,
 				3589118A20E442A600E9678F /* UIApplication+Extensions.swift */,
 				3589118D20E442A700E9678F /* UIColor+Extensions.swift */,
+				35F36DB620E6D09A00147A15 /* UIStoryboard+Extensions.swift */,
 				3589118C20E442A700E9678F /* UITextField+Extensions.swift */,
 				3589118720E442A600E9678F /* UIView+Extensions.swift */,
 				3589118820E442A600E9678F /* UIViewController+Extensions.swift */,
@@ -262,6 +267,7 @@
 				358911CD20E5255700E9678F /* UIViewExtensionsTests.swift */,
 				358911CB20E5242300E9678F /* UITextFieldExtensionsTests.swift */,
 				358911F020E5318400E9678F /* UIViewControllerExtensionsTests.swift */,
+				35F36DBA20E6D37D00147A15 /* UIStoryboardExtensionsTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -508,6 +514,7 @@
 				3589118F20E442A700E9678F /* UIViewController+Extensions.swift in Sources */,
 				3589119320E442A700E9678F /* UITextField+Extensions.swift in Sources */,
 				358911C220E51BDF00E9678F /* Double+Extensions.swift in Sources */,
+				35F36DB720E6D09A00147A15 /* UIStoryboard+Extensions.swift in Sources */,
 				358911A120E442CF00E9678F /* PopoverPreparable.swift in Sources */,
 				3589119420E442A700E9678F /* UIColor+Extensions.swift in Sources */,
 				3589119120E442A700E9678F /* UIApplication+Extensions.swift in Sources */,
@@ -523,6 +530,7 @@
 				358911D220E5264800E9678F /* PopoverViewControllerTests.swift in Sources */,
 				358911C620E51C6F00E9678F /* StringExtensionsTests.swift in Sources */,
 				358911CE20E5255700E9678F /* UIViewExtensionsTests.swift in Sources */,
+				35F36DBB20E6D37D00147A15 /* UIStoryboardExtensionsTests.swift in Sources */,
 				358911CA20E51FF900E9678F /* UIColorExtensionsTests.swift in Sources */,
 				358911C420E51C0C00E9678F /* DoubleExtensionsTests.swift in Sources */,
 				35F36D6820E571D400147A15 /* TapticFeedbackableTests.swift in Sources */,

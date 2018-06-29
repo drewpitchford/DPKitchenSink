@@ -60,7 +60,7 @@ extension UIViewController: TapticFeedbackable {
         showOkAlert(withTitle: "Not Yet Implemented", andMessage: "This feature hasn't been implemented yet.")
     }
     
-    public func showAlert(for error: Error, with actions: [UIAlertAction]? = nil) {
+    public func showAlert(for error: Error, actions: [UIAlertAction]? = nil) {
         
         guard actions == nil else {
             
