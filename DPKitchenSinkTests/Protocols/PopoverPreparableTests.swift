@@ -2,7 +2,7 @@
 //  PopoverPreparableTests.swift
 //  DPKitchenSinkTests
 //
-//  Created by Work Drew on 6/28/18.
+//  Created by Drew Pitchford on 6/28/18.
 //
 
 import XCTest

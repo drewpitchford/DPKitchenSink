@@ -32,7 +32,16 @@ class PopoverTableViewCell: UITableViewCell, Reusable {
     // MARK: - Setup
     func setup(with displayableItem: PopoverDisplayable) {
         
+        setUpUI()
         displayLabel.text = displayableItem.displayText
         accessibilityLabel = displayableItem.displayText
+    }
+    
+    func setUpUI() {
+        
+        displayLabel.textColor = DPKitchenSinkThemeManager.shared.currentTheme.textColor
+        displayLabel.font = DPKitchenSinkThemeManager.shared.currentTheme.font
+        contentView.backgroundColor = .clear
+        backgroundColor = DPKitchenSinkThemeManager.shared.currentTheme.backgroundColor
     }
 }
