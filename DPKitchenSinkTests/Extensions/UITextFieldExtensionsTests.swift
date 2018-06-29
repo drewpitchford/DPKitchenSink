@@ -22,13 +22,4 @@ class UITextFieldExtensionsTests: XCTestCase {
         tf.text = "some@email.com"
         XCTAssertTrue(tf.containsValidEmail)
     }
-    
-    func testNextfield() {
-        
-        let tf1 = UITextField()
-        let tf2 = UITextField()
-        
-        tf1.nextField = tf2
-        XCTAssertEqual(tf1.nextField, tf2)
-    }
 }

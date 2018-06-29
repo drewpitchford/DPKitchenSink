@@ -211,9 +211,6 @@ SWIFT_CLASS("_TtC13DPKitchenSink21PopoverViewController")
 
 
 
-@interface UITextField (SWIFT_EXTENSION(DPKitchenSink))
-@property (nonatomic, strong) IBOutlet UITextField * _Nullable nextField;
-@end
 
 
 
