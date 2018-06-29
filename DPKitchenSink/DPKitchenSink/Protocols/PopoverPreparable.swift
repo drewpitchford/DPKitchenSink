@@ -28,7 +28,7 @@ public protocol PopoverPreparable {}
 
 extension PopoverPreparable {
     
-    func preparePopover(_ popoverVC: UIViewController, sourceView: UIView, sourceRect: CGRect, barButton: UIBarButtonItem? = nil, navControllerPopoverDelegate: UIPopoverPresentationControllerDelegate) -> UINavigationController {
+    public func preparePopover(_ popoverVC: UIViewController, sourceView: UIView, sourceRect: CGRect, barButton: UIBarButtonItem? = nil, navControllerPopoverDelegate: UIPopoverPresentationControllerDelegate) -> UINavigationController {
         
         let navController = UINavigationController(rootViewController: popoverVC)
         navController.isNavigationBarHidden = true
@@ -46,7 +46,7 @@ extension PopoverPreparable {
 
 extension PopoverPreparable where Self : UIViewController {
     
-    func presentPopover(with vc: UIViewController, sourceView: UIView) {
+    public func presentPopover(with vc: UIViewController, sourceView: UIView) {
         
         let popoverNavController = preparePopover(vc, sourceView: sourceView, sourceRect: sourceView.bounds, navControllerPopoverDelegate: self)
         present(popoverNavController, animated: true, completion: nil)
