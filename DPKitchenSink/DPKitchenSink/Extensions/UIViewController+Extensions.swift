@@ -38,7 +38,7 @@ extension UIViewController: TapticFeedbackable {
                     fatalError("Missing injection in \(file)::\(function)")
                 })
                 
-                showAlert(withTitle: "VC Injection Error", message: "Missing injection in \(file)::\(function). Pressing Ok will kill the app. Please contact the app developer with this info", and: [okAction])
+                showAlert(withTitle: "VC Injection Error", message: "Missing injection in \(file)::\(function). Pressing Ok will kill the app. Please contact the app developer with this info", actions: [okAction])
                 return
             }
         }
@@ -64,7 +64,7 @@ extension UIViewController: TapticFeedbackable {
         
         guard actions == nil else {
             
-            showAlert(withTitle: "Web Error", message: error.localizedDescription, and: actions)
+            showAlert(withTitle: "Web Error", message: error.localizedDescription, actions: actions)
             return
         }
         
@@ -79,7 +79,7 @@ extension UIViewController: TapticFeedbackable {
         present(alert, animated: true, completion: nil)
     }
     
-    public func showAlert(withTitle title: String = "", message: String, and actions: [UIAlertAction]? = nil) {
+    public func showAlert(withTitle title: String = "", message: String, actions: [UIAlertAction]? = nil) {
         
         if let actions = actions {
             

@@ -6,6 +6,21 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		35F36DAD20E6CA4C00147A15 /* UniversalDPKitchenSink */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 35F36DB020E6CA4C00147A15 /* Build configuration list for PBXAggregateTarget "UniversalDPKitchenSink" */;
+			buildPhases = (
+				35F36DB320E6CA6200147A15 /* Create Universal SDK */,
+			);
+			dependencies = (
+				35F36DB220E6CA5F00147A15 /* PBXTargetDependency */,
+			);
+			name = UniversalDPKitchenSink;
+			productName = UniversalDPKitchenSink;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		3589118E20E442A700E9678F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589118720E442A600E9678F /* UIView+Extensions.swift */; };
 		3589118F20E442A700E9678F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589118820E442A600E9678F /* UIViewController+Extensions.swift */; };
@@ -43,6 +58,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		358911B920E519F400E9678F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3589115920E4416B00E9678F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3589116120E4416B00E9678F;
+			remoteInfo = DPKitchenSink;
+		};
+		35F36DB120E6CA5F00147A15 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3589115920E4416B00E9678F /* Project object */;
 			proxyType = 1;
@@ -349,6 +371,9 @@
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
 					};
+					35F36DAD20E6CA4C00147A15 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 3589115C20E4416B00E9678F /* Build configuration list for PBXProject "DPKitchenSink" */;
@@ -366,6 +391,7 @@
 			targets = (
 				3589116120E4416B00E9678F /* DPKitchenSink */,
 				358911B220E519F400E9678F /* DPKitchenSinkTests */,
+				35F36DAD20E6CA4C00147A15 /* UniversalDPKitchenSink */,
 			);
 		};
 /* End PBXProject section */
@@ -406,6 +432,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		35F36DB320E6CA6200147A15 /* Create Universal SDK */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Universal SDK";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 2. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nfi\n\n# Step 3. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"";
 		};
 		65982817167B3E35E1552D11 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -502,6 +542,11 @@
 			isa = PBXTargetDependency;
 			target = 3589116120E4416B00E9678F /* DPKitchenSink */;
 			targetProxy = 358911B920E519F400E9678F /* PBXContainerItemProxy */;
+		};
+		35F36DB220E6CA5F00147A15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3589116120E4416B00E9678F /* DPKitchenSink */;
+			targetProxy = 35F36DB120E6CA5F00147A15 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -726,6 +771,24 @@
 			};
 			name = Release;
 		};
+		35F36DAE20E6CA4C00147A15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8C9TW468J9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		35F36DAF20E6CA4C00147A15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8C9TW468J9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -752,6 +815,15 @@
 			buildConfigurations = (
 				358911BC20E519F400E9678F /* Debug */,
 				358911BD20E519F400E9678F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35F36DB020E6CA4C00147A15 /* Build configuration list for PBXAggregateTarget "UniversalDPKitchenSink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35F36DAE20E6CA4C00147A15 /* Debug */,
+				35F36DAF20E6CA4C00147A15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
