@@ -13,6 +13,19 @@ class UITextFieldExtensionsTests: XCTestCase {
     func testContainsValidEmail() {
         
         let tf = UITextField()
+        
+        tf.text = "h"
+        XCTAssertFalse(tf.containsValidEmail)
+        
+        tf.text = "h@"
+        XCTAssertFalse(tf.containsValidEmail)
+        
+        tf.text = "h@H"
+        XCTAssertFalse(tf.containsValidEmail)
+        
+        tf.text = "h@h."
+        XCTAssertFalse(tf.containsValidEmail)
+        
         tf.text = "sadfhsladkf"
         XCTAssertFalse(tf.containsValidEmail)
         
