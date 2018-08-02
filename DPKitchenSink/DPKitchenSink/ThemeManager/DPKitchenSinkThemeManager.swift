@@ -13,11 +13,11 @@ public class DPKitchenSinkThemeManager {
     public static let shared = DPKitchenSinkThemeManager()
     
     // MARK: - Properties
-    public var currentTheme: Themeable
+    public var currentPopoverTheme: PopoverThemeable
     
     // MARK: - Lifecycle
     init() {
         
-        currentTheme = DefaultTheme()
+        currentPopoverTheme = DefaultPopoverTheme()
     }
 }

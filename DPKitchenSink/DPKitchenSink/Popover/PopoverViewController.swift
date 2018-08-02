@@ -57,6 +57,7 @@ public class PopoverViewController: UIViewController {
         assertDependenciesHaveBeenInjected([popoverData])
         navigationController?.isNavigationBarHidden = true
         popoverTableView.estimatedRowHeight = cellHeight
+        view.backgroundColor = DPKitchenSinkThemeManager.shared.currentPopoverTheme.backgroundColor
     }
     
     override public func viewWillAppear(_ animated: Bool) {

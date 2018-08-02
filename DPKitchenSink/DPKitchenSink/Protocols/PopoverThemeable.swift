@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol Themeable {
+public protocol PopoverThemeable {
     
     var backgroundColor: UIColor { get }
     var font: UIFont { get }
