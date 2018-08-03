@@ -33,7 +33,7 @@ extension UIView {
         vibrancyEffectView.autoPinEdgesToSuperviewEdges()
     }
     
-    private func removeBlurs() {
+    public func removeBlurs() {
         
         for view in subviews {
             

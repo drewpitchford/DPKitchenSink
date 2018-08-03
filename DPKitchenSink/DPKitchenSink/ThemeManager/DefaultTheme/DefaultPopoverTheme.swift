@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DefaultTheme: Themeable {
+class DefaultPopoverTheme: PopoverThemeable {
     
     // MARK: - Properties
     var backgroundColor: UIColor

@@ -39,9 +39,9 @@ class PopoverTableViewCell: UITableViewCell, Reusable {
     
     func setUpUI() {
         
-        displayLabel.textColor = DPKitchenSinkThemeManager.shared.currentTheme.textColor
-        displayLabel.font = DPKitchenSinkThemeManager.shared.currentTheme.font
+        displayLabel.textColor = DPKitchenSinkThemeManager.shared.currentPopoverTheme.textColor
+        displayLabel.font = DPKitchenSinkThemeManager.shared.currentPopoverTheme.font
         contentView.backgroundColor = .clear
-        backgroundColor = DPKitchenSinkThemeManager.shared.currentTheme.backgroundColor
+        backgroundColor = .clear
     }
 }

@@ -44,10 +44,10 @@ class PopoverViewControllerTests: XCTestCase {
         XCTAssertEqual(width.presentationWidth, UIScreen.main.bounds.size.width * width.rawValue)
         
         width = .medium
-        XCTAssertEqual(width.presentationWidth, UIScreen.main.bounds.size.width * width.rawValue)
+        XCTAssertEqual(width.presentationWidth, min(UIScreen.main.bounds.size.width * width.rawValue, 320))
         
         width = .wide
-        XCTAssertEqual(width.presentationWidth, UIScreen.main.bounds.size.width * width.rawValue)
+        XCTAssertEqual(width.presentationWidth, min(UIScreen.main.bounds.size.width * width.rawValue, 320))
     }
     
     func testContentHeight() {
