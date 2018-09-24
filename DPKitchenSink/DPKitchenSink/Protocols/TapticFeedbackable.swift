@@ -39,23 +39,19 @@ extension TapticFeedbackable {
         }
     }
     
-    public func fireNotificationFeedback(with type: UINotificationFeedbackType) {
+    @available(iOS 10.0, *)
+    public func fireNotificationFeedback(with type: UINotificationFeedbackGenerator.FeedbackType) {
         
-        if #available(iOS 10.0, *) {
-            
-            let feedback = UINotificationFeedbackGenerator()
-            feedback.prepare()
-            feedback.notificationOccurred(type)
-        }
+        let feedback = UINotificationFeedbackGenerator()
+        feedback.prepare()
+        feedback.notificationOccurred(type)
     }
     
-    public func fireImpactFeedback(with impactStyle: UIImpactFeedbackStyle) {
+    @available(iOS 10.0, *)
+    public func fireImpactFeedback(with impactStyle: UIImpactFeedbackGenerator.FeedbackStyle) {
         
-        if #available(iOS 10.0, *) {
-            
-            let feedback = UIImpactFeedbackGenerator(style: impactStyle)
-            feedback.prepare()
-            feedback.impactOccurred()
-        }
+        let feedback = UIImpactFeedbackGenerator(style: impactStyle)
+        feedback.prepare()
+        feedback.impactOccurred()
     }
 }
