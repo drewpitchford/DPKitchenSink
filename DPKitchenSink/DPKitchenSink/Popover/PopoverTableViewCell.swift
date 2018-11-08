@@ -30,11 +30,14 @@ class PopoverTableViewCell: UITableViewCell, Reusable {
     @IBOutlet weak var displayLabel: UILabel!
     
     // MARK: - Setup
-    func setup(with displayableItem: PopoverDisplayable) {
+    func setup(with displayableItem: PopoverDisplayable, isSelectable: Bool, textAlignment: NSTextAlignment) {
         
         setUpUI()
         displayLabel.text = displayableItem.displayText
+        displayLabel.textAlignment = textAlignment
         accessibilityLabel = displayableItem.displayText
+        selectionStyle = isSelectable ? .default : .none
+        
     }
     
     func setUpUI() {

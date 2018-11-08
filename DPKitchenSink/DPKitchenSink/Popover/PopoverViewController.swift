@@ -35,13 +35,9 @@ public class PopoverViewController: UIViewController {
     
     // MARK: - Properties
     public weak var delegate: PopoverViewControllerDelegate?
+    public var cellsAreSelectable = true
+    public var cellTextAlignment: NSTextAlignment = .center
     var popoverData: [PopoverDisplayable]!
-    var contentHeight: CGFloat {
-        
-        let height = min(cellHeight * CGFloat(popoverData.count), cellHeight * 5)
-        popoverTableView.isScrollEnabled = cellHeight * CGFloat(popoverData.count) > cellHeight * 5
-        return height
-    }
     var contentWidth: CGFloat!
     
     // MARK: - Constants
@@ -58,19 +54,28 @@ public class PopoverViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
         popoverTableView.estimatedRowHeight = cellHeight
         view.backgroundColor = DPKitchenSinkThemeManager.shared.currentPopoverTheme.backgroundColor
+        
+        // KVO
+        popoverTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
     
-    override public func viewWillAppear(_ animated: Bool) {
+    public override func viewDidDisappear(_ animated: Bool) {
         
-        super.viewWillAppear(animated)
+        super.viewDidDisappear(animated)
         
-        preferredContentSize = CGSize(width: contentWidth, height: contentHeight)
+        popoverTableView.removeObserver(self, forKeyPath: "contentSize")
     }
     
     public func inject(_ data: [PopoverDisplayable], preferredWidth: PopoverWidth) {
         
         popoverData = data
         contentWidth = preferredWidth.presentationWidth
+    }
+    
+    // MARK: - KVO Handlers
+    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
+        preferredContentSize = CGSize(width: contentWidth, height: popoverTableView.contentSize.height)
     }
 }
 
@@ -91,11 +96,16 @@ extension PopoverViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell: PopoverTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let displayableItem = popoverData[indexPath.row]
-        cell.setup(with: displayableItem)
+        cell.setup(with: displayableItem, isSelectable: cellsAreSelectable, textAlignment: cellTextAlignment)
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard cellsAreSelectable else {
+            
+            return
+        }
         
         fireSelectionFeedback()
         
