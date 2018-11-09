@@ -42,11 +42,9 @@ class PopoverTableViewCell: UITableViewCell, Reusable {
     
     func setUpUI(isFocused: Bool) {
         
-        displayLabel.textColor = DPKitchenSinkThemeManager.shared.currentPopoverTheme.textColor
+        displayLabel.textColor = isFocused ? DPKitchenSinkThemeManager.shared.currentPopoverTheme.focusTextColor : DPKitchenSinkThemeManager.shared.currentPopoverTheme.textColor
         displayLabel.font = DPKitchenSinkThemeManager.shared.currentPopoverTheme.font
         contentView.backgroundColor = .clear
-        
-        let focusedColor = UIColor.customColor(withRed: 245, green: 247, blue: 249)
-        backgroundColor = isFocused ? focusedColor : .clear
+        backgroundColor = isFocused ? DPKitchenSinkThemeManager.shared.currentPopoverTheme.focusBackgroundColor : .clear
     }
 }

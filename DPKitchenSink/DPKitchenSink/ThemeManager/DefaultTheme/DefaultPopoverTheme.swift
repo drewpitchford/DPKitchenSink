@@ -13,6 +13,8 @@ class DefaultPopoverTheme: PopoverThemeable {
     var backgroundColor: UIColor
     var font: UIFont
     var textColor: UIColor
+    var focusTextColor: UIColor
+    var focusBackgroundColor: UIColor
     
     // MARK: - Lifecycle
     init() {
@@ -20,5 +22,7 @@ class DefaultPopoverTheme: PopoverThemeable {
         backgroundColor = .white
         font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         textColor = .black
+        focusBackgroundColor = UIColor.customColor(withRed: 245, green: 247, blue: 249)
+        focusTextColor = .black
     }
 }
