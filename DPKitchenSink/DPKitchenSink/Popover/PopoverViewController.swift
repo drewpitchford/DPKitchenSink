@@ -37,8 +37,18 @@ public class PopoverViewController: UIViewController {
     public weak var delegate: PopoverViewControllerDelegate?
     public var cellsAreSelectable = true
     public var cellTextAlignment: NSTextAlignment = .center
+    public var allowKeyboardNavigation = true
     var popoverData: [PopoverDisplayable]!
     var contentWidth: CGFloat!
+    private var tableNavigator: TableNavigator?
+    public override var keyCommands: [UIKeyCommand]? {
+        
+        set {}
+        get {
+            
+            return tableNavigator?.possibleKeyCommands
+        }
+    }
     
     // MARK: - Constants
     private let cellHeight: CGFloat = 44
@@ -57,6 +67,12 @@ public class PopoverViewController: UIViewController {
         
         // KVO
         popoverTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        
+        // Table Navigator
+        if allowKeyboardNavigation {
+        
+            tableNavigator = TableNavigator(tableView: popoverTableView, delegate: self)
+        }
     }
     
     public override func viewDidDisappear(_ animated: Bool) {
@@ -77,6 +93,17 @@ public class PopoverViewController: UIViewController {
         
         preferredContentSize = CGSize(width: contentWidth, height: popoverTableView.contentSize.height)
     }
+    
+    // MARK: - Overrides
+    public override func target(forAction action: Selector, withSender sender: Any?) -> Any? {
+        
+        guard let target = tableNavigator?.target(forKeyCommandAction: action) else {
+            
+            return super.target(forAction: action, withSender: sender)
+        }
+        
+        return target
+    }
 }
 
 // MARK: - UITableViewDelegate methods
@@ -96,11 +123,18 @@ extension PopoverViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell: PopoverTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let displayableItem = popoverData[indexPath.row]
-        cell.setup(with: displayableItem, isSelectable: cellsAreSelectable, textAlignment: cellTextAlignment)
+        let isFocused = tableNavigator?.indexPathForFocusedRow == indexPath
+        cell.setup(with: displayableItem, isSelectable: cellsAreSelectable, textAlignment: cellTextAlignment, isFocused: isFocused)
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        cellChosen(at: indexPath)
+    }
+    
+    // MARK: - Helpers
+    func cellChosen(at indexPath: IndexPath) {
         
         guard cellsAreSelectable else {
             
@@ -109,10 +143,24 @@ extension PopoverViewController: UITableViewDelegate, UITableViewDataSource {
         
         fireSelectionFeedback()
         
-        tableView.deselectRow(at: indexPath, animated: false)
+        popoverTableView.deselectRow(at: indexPath, animated: false)
         let item = popoverData[indexPath.row]
         delegate?.displayableItemSelected(item)
         
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension PopoverViewController: TableNavigatorDelegate {
+    
+    
+    public func tableNavigator(_ navigator: TableNavigator, commitFocusedRowAt indexPath: IndexPath) {
+        
+        cellChosen(at: indexPath)
+    }
+    
+    public func tableNavigator(_ navigator: TableNavigator, didUpdateFocus focusUpdate: TableNavigator.FocusUpdate, completedNavigationWith context: TableNavigator.NavigationCompletionContext) {
+        
+        popoverTableView.reloadRows(at: focusUpdate.indexPathsForChangedRows, with: .automatic)
     }
 }

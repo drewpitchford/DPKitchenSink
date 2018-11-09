@@ -30,9 +30,9 @@ class PopoverTableViewCell: UITableViewCell, Reusable {
     @IBOutlet weak var displayLabel: UILabel!
     
     // MARK: - Setup
-    func setup(with displayableItem: PopoverDisplayable, isSelectable: Bool, textAlignment: NSTextAlignment) {
+    func setup(with displayableItem: PopoverDisplayable, isSelectable: Bool, textAlignment: NSTextAlignment, isFocused: Bool) {
         
-        setUpUI()
+        setUpUI(isFocused: isFocused)
         displayLabel.text = displayableItem.displayText
         displayLabel.textAlignment = textAlignment
         accessibilityLabel = displayableItem.displayText
@@ -40,11 +40,13 @@ class PopoverTableViewCell: UITableViewCell, Reusable {
         
     }
     
-    func setUpUI() {
+    func setUpUI(isFocused: Bool) {
         
         displayLabel.textColor = DPKitchenSinkThemeManager.shared.currentPopoverTheme.textColor
         displayLabel.font = DPKitchenSinkThemeManager.shared.currentPopoverTheme.font
         contentView.backgroundColor = .clear
-        backgroundColor = .clear
+        
+        let focusedColor = UIColor.customColor(withRed: 245, green: 247, blue: 249)
+        backgroundColor = isFocused ? focusedColor : .clear
     }
 }
