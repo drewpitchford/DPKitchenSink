@@ -64,6 +64,7 @@ public class PopoverViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
         popoverTableView.estimatedRowHeight = cellHeight
         view.backgroundColor = DPKitchenSinkThemeManager.shared.currentPopoverTheme.backgroundColor
+        popoverTableView.backgroundColor = DPKitchenSinkThemeManager.shared.currentPopoverTheme.backgroundColor
         popoverTableView.backgroundView = DPKitchenSinkThemeManager.shared.currentPopoverTheme.backgroundVisualEffectView
         
         // KVO
