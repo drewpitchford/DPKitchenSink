@@ -116,13 +116,13 @@ extension UIViewController: TapticFeedbackable {
 extension UIViewController: UIPopoverPresentationControllerDelegate {
     
     // for iOS 8 - 9.2
-    public func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+    open func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         
         return .none
     }
     
     // for iOS 9.3 and up
-    public func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+    open func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         
         return .none
     }
