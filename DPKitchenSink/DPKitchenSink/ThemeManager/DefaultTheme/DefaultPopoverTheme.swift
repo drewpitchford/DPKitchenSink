@@ -15,6 +15,7 @@ class DefaultPopoverTheme: PopoverThemeable {
     var textColor: UIColor
     var focusTextColor: UIColor
     var focusBackgroundColor: UIColor
+    var backgroundVisualEffectView: UIVisualEffectView?
     
     // MARK: - Lifecycle
     init() {

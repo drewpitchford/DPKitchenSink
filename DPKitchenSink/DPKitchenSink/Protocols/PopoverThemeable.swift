@@ -14,4 +14,5 @@ public protocol PopoverThemeable {
     var font: UIFont { get }
     var textColor: UIColor { get }
     var focusTextColor: UIColor { get }
+    var backgroundVisualEffectView: UIVisualEffectView? { get }
 }
