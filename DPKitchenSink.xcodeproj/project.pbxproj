@@ -44,7 +44,6 @@
 		3589119220E442A700E9678F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589118B20E442A700E9678F /* String+Extensions.swift */; };
 		3589119320E442A700E9678F /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589118C20E442A700E9678F /* UITextField+Extensions.swift */; };
 		3589119420E442A700E9678F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589118D20E442A700E9678F /* UIColor+Extensions.swift */; };
-		3589119620E442B600E9678F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589119520E442B600E9678F /* Logger.swift */; };
 		3589119D20E442CF00E9678F /* Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3589119720E442CE00E9678F /* Popover.storyboard */; };
 		3589119E20E442CF00E9678F /* PopoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589119820E442CE00E9678F /* PopoverTableViewCell.swift */; };
 		3589119F20E442CF00E9678F /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589119920E442CE00E9678F /* PopoverViewController.swift */; };
@@ -120,7 +119,6 @@
 		3589118B20E442A700E9678F /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		3589118C20E442A700E9678F /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		3589118D20E442A700E9678F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		3589119520E442B600E9678F /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		3589119720E442CE00E9678F /* Popover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popover.storyboard; sourceTree = "<group>"; };
 		3589119820E442CE00E9678F /* PopoverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverTableViewCell.swift; sourceTree = "<group>"; };
 		3589119920E442CE00E9678F /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
@@ -275,7 +273,6 @@
 			children = (
 				35F36DBE20E6DE8100147A15 /* ThemeManager */,
 				3589118320E4425F00E9678F /* Extensions */,
-				3589118420E4426800E9678F /* Logger */,
 				3589118520E4427100E9678F /* Popover */,
 				3589118620E4427500E9678F /* Protocols */,
 			);
@@ -296,14 +293,6 @@
 				3589118820E442A600E9678F /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		3589118420E4426800E9678F /* Logger */ = {
-			isa = PBXGroup;
-			children = (
-				3589119520E442B600E9678F /* Logger.swift */,
-			);
-			path = Logger;
 			sourceTree = "<group>";
 		};
 		3589118520E4427100E9678F /* Popover */ = {
@@ -639,7 +628,6 @@
 				3530FADC2195EC4900EC434A /* UITableView+IndexPathTraversal.swift in Sources */,
 				35F36DC520E6E21000147A15 /* DPKitchenSinkThemeManager.swift in Sources */,
 				3589118E20E442A700E9678F /* UIView+Extensions.swift in Sources */,
-				3589119620E442B600E9678F /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

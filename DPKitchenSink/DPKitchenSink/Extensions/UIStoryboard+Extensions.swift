@@ -15,7 +15,7 @@ extension UIStoryboard {
         let storyboard = UIStoryboard(name: "Popover", bundle: bundle)
         guard let popoverVC = storyboard.instantiateInitialViewController() as? PopoverViewController else {
             
-            dp_print("Something went horribly wrong. Contact the maintainer of DPKitchenSink")
+            print("Something went horribly wrong. Contact the maintainer of DPKitchenSink")
             fatalError("Something went horribly wrong. Contact the maintainer of DPKitchenSink")
         }
         

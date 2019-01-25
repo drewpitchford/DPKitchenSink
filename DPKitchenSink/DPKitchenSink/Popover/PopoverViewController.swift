@@ -58,8 +58,6 @@ public class PopoverViewController: UIViewController {
         
         super.viewDidLoad()
         
-        dp_print("Showing popover")
-        
         assertDependenciesHaveBeenInjected([popoverData])
         navigationController?.isNavigationBarHidden = true
         popoverTableView.estimatedRowHeight = cellHeight
