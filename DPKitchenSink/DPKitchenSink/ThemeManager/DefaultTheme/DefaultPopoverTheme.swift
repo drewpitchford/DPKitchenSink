@@ -15,7 +15,7 @@ class DefaultPopoverTheme: PopoverThemeable {
     var textColor: UIColor
     var focusTextColor: UIColor
     var focusBackgroundColor: UIColor
-    var backgroundVisualEffectView: UIVisualEffectView?
+    var blurStyle: UIBlurEffect.Style?
     
     // MARK: - Lifecycle
     init() {

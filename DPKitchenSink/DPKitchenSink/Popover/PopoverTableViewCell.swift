@@ -44,6 +44,7 @@ class PopoverTableViewCell: UITableViewCell, Reusable {
         
         displayLabel.textColor = isFocused ? DPKitchenSinkThemeManager.shared.currentPopoverTheme.focusTextColor : DPKitchenSinkThemeManager.shared.currentPopoverTheme.textColor
         displayLabel.font = DPKitchenSinkThemeManager.shared.currentPopoverTheme.font
+        displayLabel.backgroundColor = .clear
         contentView.backgroundColor = .clear
         backgroundColor = isFocused ? DPKitchenSinkThemeManager.shared.currentPopoverTheme.focusBackgroundColor : .clear
     }

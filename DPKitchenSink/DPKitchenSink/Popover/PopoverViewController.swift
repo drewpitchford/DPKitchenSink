@@ -58,14 +58,13 @@ public class PopoverViewController: UIViewController {
         
         super.viewDidLoad()
         
-        log("Showing popover")
+        dp_print("Showing popover")
         
         assertDependenciesHaveBeenInjected([popoverData])
         navigationController?.isNavigationBarHidden = true
         popoverTableView.estimatedRowHeight = cellHeight
         view.backgroundColor = DPKitchenSinkThemeManager.shared.currentPopoverTheme.backgroundColor
         popoverTableView.backgroundColor = DPKitchenSinkThemeManager.shared.currentPopoverTheme.backgroundColor
-        popoverTableView.backgroundView = DPKitchenSinkThemeManager.shared.currentPopoverTheme.backgroundVisualEffectView
         
         // KVO
         popoverTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)

@@ -24,9 +24,9 @@
 import Foundation
 import CocoaLumberjack
 
-public var shouldLogNetworkResponses = false
+internal var shouldLogNetworkResponses = false
 
-public func setUpLogging() {
+internal func setUpLogging() {
     
     DDLog.add(DDASLLogger.sharedInstance)
     
@@ -38,7 +38,7 @@ public func setUpLogging() {
     }
 }
 
-public func log(_ message: Any = "", file: String = #file, method: String = #function) {
+internal func dp_print(_ message: Any = "", file: String = #file, method: String = #function) {
     
     guard let fileName = file.components(separatedBy: "/").last else {
         
@@ -49,10 +49,10 @@ public func log(_ message: Any = "", file: String = #file, method: String = #fun
     DDLogInfo("\(Date())   \(fileName)::\(method) - \(message)")
 }
 
-public func networkLog(_ message: Any = "", file: String = #file, method: String = #function) {
+internal func dp_networkLog(_ message: Any = "", file: String = #file, method: String = #function) {
     
     if shouldLogNetworkResponses {
         
-        log(message, file: file, method: method)
+        dp_print(message, file: file, method: method)
     }
 }
