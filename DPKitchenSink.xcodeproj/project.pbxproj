@@ -896,7 +896,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8C9TW468J9;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -906,7 +906,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8C9TW468J9;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
