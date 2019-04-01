@@ -10,7 +10,7 @@ s.platform         = :ios
 s.ios.deployment_target   = '9.0'
 s.ios.vendored_frameworks = 'DPKitchenSink.framework'
 s.source = { :git=> 'https://github.com/drewpitchford/DPKitchenSink.git', :tag=>'1.2.0' }
-s.swift_version = '5'
+s.swift_version = '5.0'
 s.dependency 'CocoaLumberjack/Swift'
 s.dependency 'PureLayout'
 s.dependency 'Reusable', '~> 4.0'
