@@ -12,7 +12,7 @@ import PureLayout
 extension UIView {
     
     // MARK: - Blurring
-    public func blur(using effectStyle: UIBlurEffectStyle) {
+    public func blur(using effectStyle: UIBlurEffect.Style) {
         
         backgroundColor = .clear
         removeBlurs()
@@ -22,7 +22,7 @@ extension UIView {
         blurredEffectView.frame = bounds
         
         addSubview(blurredEffectView)
-        sendSubview(toBack: blurredEffectView)
+        sendSubviewToBack(blurredEffectView)
         blurredEffectView.autoPinEdgesToSuperviewEdges()
         
         let vibrancyEffect = UIVibrancyEffect(blurEffect: blurEffect)
