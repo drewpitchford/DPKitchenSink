@@ -7,7 +7,7 @@ target 'DPKitchenSink' do
   # Pods for DPKit
   pod 'CocoaLumberjack/Swift'
   pod 'PureLayout'
-  pod 'Reusable', '~> 4.0'
+  pod 'Reusable'
   pod 'SwifterSwift'
 
   target 'DPKitchenSinkTests' do

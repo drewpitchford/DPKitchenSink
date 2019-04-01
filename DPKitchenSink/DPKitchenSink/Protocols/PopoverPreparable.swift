@@ -28,14 +28,17 @@ public protocol PopoverPreparable {}
 
 extension PopoverPreparable {
     
-    public func preparePopover(_ popoverVC: UIViewController, sourceView: UIView, sourceRect: CGRect, barButton: UIBarButtonItem? = nil, navControllerPopoverDelegate: UIPopoverPresentationControllerDelegate) -> UINavigationController {
+    public func preparePopover(_ popoverVC: UIViewController, sourceView: UIView? = nil, sourceRect: CGRect? = nil, barButton: UIBarButtonItem? = nil, navControllerPopoverDelegate: UIPopoverPresentationControllerDelegate) -> UINavigationController {
         
         let navController = UINavigationController(rootViewController: popoverVC)
         navController.isNavigationBarHidden = true
         navController.modalPresentationStyle = .popover
         navController.popoverPresentationController?.delegate = navControllerPopoverDelegate
         navController.popoverPresentationController?.sourceView = sourceView
-        navController.popoverPresentationController?.sourceRect = sourceRect
+        if let sourceRect = sourceRect {
+        
+            navController.popoverPresentationController?.sourceRect = sourceRect
+        }
         navController.popoverPresentationController?.barButtonItem = barButton
         navController.popoverPresentationController?.permittedArrowDirections = [.up, .down]
         navController.view.backgroundColor = .clear
@@ -46,9 +49,15 @@ extension PopoverPreparable {
 
 extension PopoverPreparable where Self : UIViewController {
     
-    public func presentPopover(with vc: UIViewController, sourceView: UIView) {
+    public func presentPopover(with vc: UIViewController, fromSourceView sourceView: UIView) {
         
         let popoverNavController = preparePopover(vc, sourceView: sourceView, sourceRect: sourceView.bounds, navControllerPopoverDelegate: self)
+        present(popoverNavController, animated: true, completion: nil)
+    }
+    
+    public func presentPopover(with vc: UIViewController, fromBarButton barButton: UIBarButtonItem) {
+        
+        let popoverNavController = preparePopover(vc, barButton: barButton, navControllerPopoverDelegate: self)
         present(popoverNavController, animated: true, completion: nil)
     }
 }

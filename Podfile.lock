@@ -1,0 +1,56 @@
+PODS:
+  - CocoaLumberjack/Core (3.5.2)
+  - CocoaLumberjack/Swift (3.5.2):
+    - CocoaLumberjack/Core
+  - MetovaTestKit (2.3.1)
+  - PureLayout (3.1.4)
+  - Reusable (4.0.5):
+    - Reusable/Storyboard (= 4.0.5)
+    - Reusable/View (= 4.0.5)
+  - Reusable/Storyboard (4.0.5)
+  - Reusable/View (4.0.5)
+  - SwifterSwift (5.0.0):
+    - SwifterSwift/AppKit (= 5.0.0)
+    - SwifterSwift/CoreGraphics (= 5.0.0)
+    - SwifterSwift/CoreLocation (= 5.0.0)
+    - SwifterSwift/Dispatch (= 5.0.0)
+    - SwifterSwift/Foundation (= 5.0.0)
+    - SwifterSwift/MapKit (= 5.0.0)
+    - SwifterSwift/SpriteKit (= 5.0.0)
+    - SwifterSwift/SwiftStdlib (= 5.0.0)
+    - SwifterSwift/UIKit (= 5.0.0)
+  - SwifterSwift/AppKit (5.0.0)
+  - SwifterSwift/CoreGraphics (5.0.0)
+  - SwifterSwift/CoreLocation (5.0.0)
+  - SwifterSwift/Dispatch (5.0.0)
+  - SwifterSwift/Foundation (5.0.0)
+  - SwifterSwift/MapKit (5.0.0)
+  - SwifterSwift/SpriteKit (5.0.0)
+  - SwifterSwift/SwiftStdlib (5.0.0)
+  - SwifterSwift/UIKit (5.0.0)
+
+DEPENDENCIES:
+  - CocoaLumberjack/Swift
+  - MetovaTestKit
+  - PureLayout
+  - Reusable
+  - SwifterSwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CocoaLumberjack
+    - MetovaTestKit
+    - PureLayout
+    - Reusable
+    - SwifterSwift
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: 118bf4a820efc641f79fa487b75ed928dccfae23
+  MetovaTestKit: d4f31a0a1321f1dcb157fd0037eb1418f0557d97
+  PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
+  Reusable: 188be1a54ac0691bc66e5bb24ec6eb91971b315b
+  SwifterSwift: 96f90594b370802f01647c2b1229c74a84ffafee
+
+PODFILE CHECKSUM: eafe8f15b5c22abf40d27f51d4b02fcc9dbbb210
+
+COCOAPODS: 1.6.1
